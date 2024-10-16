@@ -17,7 +17,7 @@
   </script>
 </head>
 
-<body>
+<body class="fontless-body">
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
@@ -25,38 +25,44 @@
       });
     }
   </script>
-
-  <header class="fontless-header">
-    <img src="logo.png" alt="Fontless" class="fontless-logo" />
-    <div class="fontless-v-divider"></div>
-    <h1 class="fontless-title"><a href="#">Fontless</a></h1>
+  <div class="fontless-container">
+    <header class="fontless-header">
+    <img src="fontless.png" alt="Fontless" class="fontless-logo" />
   </header>
 
-  <main class="container">
-    <div>
+  <main class="fontless-container fontless-section">
+    <div class="fontless-section">
       Convert fonts from/to ttf, otf, woff and woff2 without server interaction.
     </div>
-    <div id="input-select-zone">
+    <div class="fontless-input-select-zone" id="input-select-zone">
       <div>
         <input id="input-file" type="file" style="display:none" multiple>
-        <button id="select-file-button">Select a font</button>
+        <button class="fontless-select-file-button" id="select-file-button">Select a font</button>
       </div>
     </div>
 
-    <div id="selected-font-info"></div>
-
-    <div id="format-select-container">
-      <input type="radio" class="input-radio" id="output-format-otf" name="output-format" value="otf">
-      <label for="output-format-otf">TTF/OTF</label>
-      <input type="radio" class="input-radio" id="output-format-woff" name="output-format" value="woff">
-      <label for="output-format-woff">WOFF</label>
-      <input type="radio" class="input-radio" id="output-format-woff2" name="output-format" value="woff2" checked>
-      <label for="output-format-woff2">WOFF2</label>
+    <div class="fontless-section" id="selected-font-info"></div>
+    <div class="fontless-section fontless-font-conversion-select-container">
+      <div id="format-select-container">
+        <div class="fontless-font-conversion-select-button">
+          <input type="radio" class="input-radio" id="output-format-otf" name="output-format" value="otf">
+          <label for="output-format-otf">TTF/OTF</label>
+        </div>
+        <div class="fontless-font-conversion-select-button">
+          <input type="radio" class="input-radio" id="output-format-woff" name="output-format" value="woff">
+          <label for="output-format-woff">WOFF</label>
+        </div>
+        <div class="fontless-font-conversion-select-button">
+          <input type="radio" class="input-radio" id="output-format-woff2" name="output-format" value="woff2" checked>
+          <label for="output-format-woff2">WOFF2</label>
+        </div>
+      </div>
+      <div id="convert-button-container">
+        <button class="fontless-convert-button" id="convert-button">Convert</button>
+      </div>
     </div>
 
-    <div id="convert-button-container">
-      <button id="convert-button">Convert</button>
-    </div>
+
 
     <div id="spinner" class="spinner-off">
       <div style="display: flex; align-items: center">
@@ -80,14 +86,14 @@
         </svg>
       </div>
 
-      <div>It may take several minutes when you convert a large font.</div>
+      <div style="margin: auto auto;">It may take several minutes when you convert a large font.</div>
     </div>
     <div id="convert-result-container"></div>
     <div id="error-message-container" class="error-message-off"></div>
   </main>
-  <footer class="container">
-    <span id="version">__VERSION__</span> -
-    <a href="https://github.com/bashi/kombu/issues">File an issue</a>
+  <footer class="fontless-footer">
+    <span id="version">__VERSION__</span> 
+    <a href="https://github.com/prodkt/fontless/issues">File an issue</a>
   </footer>
 </body>
 
