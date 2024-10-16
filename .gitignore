@@ -1,0 +1,14 @@
+.env
+.vscode
+out/
+*.a
+*.o
+node_modules/
+dist/*.js
+dist/*.map
+dist/*.wasm
+tmp/
+public/*.html
+public/*.js
+public/*.wasm
+woff2/

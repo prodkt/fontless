@@ -1,0 +1,198 @@
+@import url(./fonts/stylesheet.css);
+
+:root {
+  --max-width: 768px;
+  --primary-color: #0067b8;
+}
+
+html, body {
+  font-family: 'Labil Grotesk', sans-serif;
+}
+
+.fontless-logo {
+  max-width: 256px;
+}
+
+.fontless-v-divider {
+  min-width: 1px;
+  width: 1px;
+  height: 100%;
+  background: #00000030;
+}
+
+.fontless-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.fontless-title {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+button {
+  font-size: 1rem;
+  font-family: 'Labil Grotesk', sans-serif;
+  display: inline-flex;
+  padding: var(--spacing-xl, 16px) 22px;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md, 8px);
+  border-radius: var(--radius-lg, 10px);
+  border: 1px solid var(--Colors-Base-transparent, rgba(255, 255, 255, 0.00));
+  background: var(--Component-colors-Components-Buttons-Primary-button-primary-bg, #51525C);
+  color: var(--Component-colors-Components-Buttons-Primary-button-primary-text, #FFFFFF);
+  /* button-shadow */
+  box-shadow: 0px 0px 2px 1px rgba(255, 255, 255, 0.30) inset, 0px 2px 4px -2px rgba(0, 0, 0, 0.10), 0px 4px 6px -1px rgba(0, 0, 0, 0.10), 0px 0px 0px 1px rgba(80, 104, 209, 0.15) inset;
+}
+
+button:focus {
+  outline:0;
+}
+
+button:hover {
+  cursor: pointer;
+  background: var(--primary-color);
+  color: white;
+}
+
+button[disabled] {
+  color: #ccc;
+  border: solid 2px #ccc;
+}
+
+button[disabled]:hover {
+  cursor: not-allowed;
+  background: white;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.input-radio {
+  display: none;
+}
+
+.input-radio + label {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+.input-radio + label:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+}
+
+.input-radio:checked + label {
+  color: var(--primary-color);
+}
+
+.input-radio:checked + label::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+
+.container {
+  padding: 0 2rem 0 2rem;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  color: #555;
+  padding: 0 2rem 0 2rem;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
+header h1 a {
+  color: #555;
+}
+
+header h1 a:hover {
+  text-decoration: none;
+}
+
+footer {
+  margin: 2rem 0 1rem 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+#version {
+  color: #ccc;
+}
+
+#input-select-zone {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+#format-select-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.convert-summary {
+  margin-bottom: 1rem;
+}
+
+#convert-result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#convert-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.spinner-off {
+  display: none;
+}
+
+#spinner-icon {
+  margin-left: 6px;
+}
+
+#error-message-container {
+  font-weight: bold;
+  color: red;
+}
+
+.error-message-off {
+  display: none;
+}

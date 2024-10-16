@@ -1,0 +1,50 @@
+{
+  "name": "Fontless",
+  "version": "0.0.1",
+  "description": "OpenType/WOFF/WOFF2 converter",
+  "scripts": {
+    "start": "http-server -p 4001 -c-0",
+    "build:production": "webpack --mode production && yarn copy-ffi && NODE_ENV=production yarn html",
+    "build": "webpack && yarn copy-ffi && yarn html",
+    "html": "node build/html.js",
+    "make-wasm": "emmake make && yarn copy-wasm",
+    "copy-wasm": "cp dist/ffi.wasm public/",
+    "copy-ffi": "node copy-ffi.js",
+    "test": "mocha --require ts-node/register test/test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prodkt/fontless.git"
+  },
+  "keywords": [
+    "opentype",
+    "woff",
+    "woff2",
+    "font",
+    "fontless"
+  ],
+  "author": "Bryan Funk <bryan.funk@prodkt.cloud>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/mocha": "^5.2.4",
+    "@types/pako": "^2.0.3",
+    "chai": "^4.1.2",
+    "dotenv": "^6.0.0",
+    "mocha": "^5.2.0",
+    "path-browserify": "^1.0.1",
+    "ts-loader": "9",
+    "typescript": "^3.0.1",
+    "webpack": "5",
+    "webpack-cli": "4",
+    "workbox-webpack-plugin": "6"
+  },
+  "dependencies": {
+    "@types/node": "^10.5.2",
+    "http-server": "^14.1.1",
+    "pako": "^2.1.0",
+    "ts-node": "^7.0.0",
+    "zlibjs": "^0.3.1"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}
